@@ -1,0 +1,96 @@
+.currency-select {
+  display: flex;
+  justify-content: flex-end;
+
+  .ir-style {
+    &.v-select {
+      width: 124px;
+    }
+
+    .vs__dropdown-toggle {
+      border: none;
+      background: #fff;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      width: 124px;
+      padding: 13px 8px 13px 13px;
+      display: flex;
+      height: 45px;
+
+      .vs__search {
+        display: none;
+      }
+
+      .vs__selected {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .vs__actions {
+      padding-top: 3px;
+    }
+    .vs__open-indicator {
+      background: url(../img/icon-dropdown.svg) no-repeat;
+      width: 10px;
+      height: 9px;
+      path {
+        display: none;
+      }
+    }
+
+    .vs__dropdown-menu {
+      width: 124px;
+      min-width: 124px;
+
+      .vs__dropdown-option {
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+    }
+
+    &.vs--open {
+      .vs__dropdown-toggle {
+        -webkit-border-radius: 5px 5px 0 0;
+        -moz-border-radius: 5px 5px 0 0;
+        border-radius: 5px 5px 0 0;
+      }
+    }
+  }
+}
+
+.vs__option {
+  display: flex;
+  align-items: center;
+
+  .vs__label {
+    font-size: 14px;
+  }
+}
+.vs__icon {
+  height: 18px;
+  width: 24px;
+  background-size: contain;
+  display: inline-block;
+  margin-right: 8px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  
+  &.au {
+    background-image: url(../img/icon-au.svg);
+  }
+
+  &.us {
+    background-image: url(../img/icon-us.svg);
+  }
+
+  &.sg {
+    background-image: url(../img/icon-sg.svg);
+  }
+
+  &.nz {
+    background-image: url(../img/icon-nz.svg);
+  }
+}

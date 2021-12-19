@@ -1,0 +1,110 @@
+.form__field {
+  & +.form__field {
+    margin-top: 20px;
+  }
+
+  .form__label {
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 7px;
+    display: block;
+    cursor: pointer;
+  }
+
+  .form__group {
+    display: flex;
+    height: 40px;
+
+    .group__label {
+      width: 90px;
+      border: 1px solid #D3D4D8;
+      background: #E9EAEB;
+      line-height: 40px;
+      -webkit-border-radius: 3px 0 0 3px;
+      -moz-border-radius: 3px 0 0 3px;
+      border-radius: 3px 0 0 3px;
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+
+      .currency-icon {
+        width: 20px;
+        height: 20px;
+        background-size: cover;
+        display: inline-block;
+        margin-right: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+
+        &.aud {
+          background-image: url(../img/icon-au.svg);
+        }
+
+        &.usd {
+          background-image: url(../img/icon-us.svg);
+        }
+
+        &.sgd {
+          background-image: url(../img/icon-sg.svg);
+        }
+
+        &.nzd {
+          background-image: url(../img/icon-nz.svg);
+        }
+
+        &.btc {
+          background-image: url(../img/icon-bitcoin.svg);
+        }
+      }
+      .currency-label {
+        text-transform: uppercase;
+        font-size: 16px;
+      }
+    }
+
+    .form__control {
+      flex-grow: 1;
+      border: 1px solid #D3D4D8;
+      border-left: 0;
+      -webkit-border-radius: 0 3px 3px 0;
+      -moz-border-radius: 0 3px 3px 0;
+      border-radius: 0 3px 3px 0;
+      padding: 0 20px;
+      font-size: 16px;
+    }
+  }
+}
+
+.form__actions {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  .form__button {
+    height: 50px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: #fe9a01;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 60px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      background: #e17b00;
+    }
+    &:disabled {
+      cursor: default;
+      background: #999;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .form__field .form__group .form__control {
+    width: 140px;
+  }
+}

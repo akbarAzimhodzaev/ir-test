@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #102242;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+.content {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.body {
+  max-width: 365px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 400px) {
+  .body {
+    max-width: 90%;
+  }
+}
