@@ -1,4 +1,6 @@
 <template>
+  <!-- custom tabs component -->
+  <!-- i wanted to use some component library for tabs, but i've decided this will be too much for only tabs  -->
   <div class="nav">
     <button
         v-for="t in tabs"

@@ -1,3 +1,4 @@
+<!--component for changing currency-->
 <template>
   <div class="currency-select">
     <v-select
@@ -5,7 +6,7 @@
       v-model="selectedCurrency"
       class="ir-style"
       :clearable="false"
-      :searchable="false"
+      :searchable="true"
       :filterable="false"
   >
     <template v-slot:selected-option="option">
@@ -35,10 +36,12 @@ export default {
   name: "CurrencySelect",
   setup() {
     const selectedCurrency = ref('usd');
+    // getting currencies list
     const currenciesOptions = ref(currencies);
 
     const { setCurrency } = useActions(['setCurrency']);
 
+    // watching for currency changes, when changes firing store action
     watch(selectedCurrency, value => {
       setCurrency(value?.value);
     })
@@ -46,6 +49,7 @@ export default {
     const store = useStore();
 
     onMounted(() => {
+       // setting selected option for select depends on store state
        selectedCurrency.value = currencies.find(c => c.value === store.state.currency)
     })
 

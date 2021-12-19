@@ -29,10 +29,12 @@ export default {
     const {isLoading, bidPrice, offerPrice, currency} = useState(['isLoading', 'bidPrice', 'offerPrice', 'currency'])
     const store = useStore();
 
+    // getting price function
     const getPrices = (currency) => { store.dispatch('getPrices', currency); }
     const priceInterval = new Timer(() => { getPrices(currency.value) }, 15000);
 
     onMounted(() => {
+      // on component mounted event fires starts interval and getting prices first time
       getPrices(currency.value);
       priceInterval.start();
     });
@@ -42,10 +44,12 @@ export default {
     });
 
     watch(currency, value => {
+      // when currency changed - reset interval
       getPrices(value);
       priceInterval.reset();
     })
 
+    // formatting prices
     const formattedOfferPrice = computed(() => {
       return (+offerPrice.value).toLocaleString('en-US', { style: 'currency', currency: 'USD' })
     });
